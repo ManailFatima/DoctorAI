@@ -1,4 +1,4 @@
-# Medical-Chatbot
+# DoctorAI
 
 
 conda create -n Medical-Chatbot python=3.10 -y
