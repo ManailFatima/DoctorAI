@@ -5,6 +5,7 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
+from langchain.schema import Document
 from dotenv import load_dotenv
 from src.prompt import *
 import os
@@ -25,7 +26,7 @@ def clean_text(text):
 app = Flask(__name__)
 
 # Add a greeting document to the Pinecone index
-from langchain.schema import Document
+
 
 
 load_dotenv()
