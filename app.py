@@ -36,7 +36,7 @@ os.environ["PINECONE_API_KEY"] = Pinecone_API_KEY
 
 embeddings = download_embeddings()
 
-index_name = "medical-chatbot"
+index_name = "doctorai-pdf"
 docsearch=PineconeVectorStore.from_existing_index(
     index_name=index_name,
     embedding=embeddings
@@ -46,7 +46,7 @@ docsearch=PineconeVectorStore.from_existing_index(
 retriever= docsearch.as_retriever(search_type="similarity",search_kwargs={"k": 3})
 
 
-generator = pipeline(    "text2text-generation", model="google/flan-t5-base")
+generator = pipeline(    "text2text-generation", model="google/flan-t5-large")
 chat_model = HuggingFacePipeline(pipeline=generator)
 prompt= ChatPromptTemplate.from_messages(
     [
